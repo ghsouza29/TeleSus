@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>TeleSus | Login</title>
+
+  <link rel="stylesheet" href="TeleSus.css">
+  <script src="TeleSus.js" defer></script>
+</head>
+
+<body>
+
+  <main class="layout" id="telaLogin">
+
+    <!-- APRESENTAÇÃO -->
+    <section class="hero">
+
+      <div class="hero-photo"></div>
+      <div class="hero-wash"></div>
+
+      <div class="hero-content">
+
+        <div class="brand">
+          <img
+            class="brand-symbol"
+            src="assets/telesus-symbol.svg"
+            alt="Símbolo TeleSus"
+          >
+
+          <div class="brand-name">
+            Tele<span>Sus</span>
+          </div>
+
+          <p class="brand-subtitle">
+            Mais cuidado, mais perto de você
+          </p>
+        </div>
+
+        <h1>
+          Telemedicina do SUS,<br>
+          ao seu alcance.
+        </h1>
+
+        <p class="intro">
+          Consultas, orientações e acompanhamento
+          médico, de forma segura, simples e gratuita.
+        </p>
+
+        <div class="benefits">
+
+          <div>
+            <svg viewBox="0 0 24 24">
+              <path d="M12 2 20 5v6c0 5-3.4 8.6-8 11-4.6-2.4-8-6-8-11V5l8-3Z"/>
+              <path d="m8 12 2.5 2.5L16 9"/>
+            </svg>
+            <span>Seguro<br>e confiável</span>
+          </div>
+
+          <div>
+            <svg viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="9"/>
+              <path d="M12 6v6l4 3"/>
+            </svg>
+            <span>Mais agilidade<br>no atendimento</span>
+          </div>
+
+          <div>
+            <svg viewBox="0 0 24 24">
+              <circle cx="9" cy="8" r="3"/>
+              <path d="M2 20v-2a7 7 0 0 1 14 0v2"/>
+              <path d="M17 5a3 3 0 0 1 0 6m2 3a6 6 0 0 1 3 5"/>
+            </svg>
+            <span>Para todos<br>os brasileiros</span>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="wave wave-light"></div>
+      <div class="wave wave-blue"></div>
+
+      <div class="sus-footer">
+        <img
+          src="assets/sus-mark.svg"
+          alt="Sistema Único de Saúde"
+        >
+      </div>
+
+    </section>
+
+    <!-- LOGIN -->
+    <section class="login-side">
+
+      <div class="login-card">
+
+        <h2>Bem-vindo(a)!</h2>
+
+        <p class="login-subtitle">
+          Faça seu login para acessar o TeleSus.
+        </p>
+
+        <form id="loginForm" novalidate>
+
+            
+<!-- NOME COMPLETO -->
+<div class="field name-field">
+
+  <span class="field-icon">
+    <svg viewBox="0 0 24 24">
+      <circle cx="12" cy="7" r="4"/>
+      <path d="M4 21v-2a8 8 0 0 1 16 0v2Z"/>
+    </svg>
+  </span>
+
+  <input
+    type="text"
+    id="nome"
+    placeholder="Nome completo"
+    autocomplete="name"
+    maxlength="100"
+    aria-label="Nome completo"
+    required
+  >
+
+</div>
+
+
+          <!-- CPF -->
+          <div class="field">
+
+            <span class="field-icon">
+              <svg viewBox="0 0 24 24">
+                <circle cx="12" cy="7" r="4"/>
+                <path d="M4 21v-2a8 8 0 0 1 16 0v2Z"/>
+              </svg>
+            </span>
+
+            <input
+              type="text"
+              id="cpf"
+              placeholder="CPF"
+              inputmode="numeric"
+              autocomplete="username"
+              maxlength="14"
+              aria-label="CPF"
+              required
+            >
+
+          </div>
+
+          <p class="hint">
+            Digite apenas os números do seu CPF.
+          </p>
+
+          <!-- SENHA -->
+          <div class="field password-field">
+
+            <span class="field-icon">
+              <svg viewBox="0 0 24 24">
+                <rect x="5" y="10" width="14" height="11" rx="2"/>
+                <path d="M8 10V7a4 4 0 0 1 8 0v3"/>
+              </svg>
+            </span>
+
+            <input
+              type="password"
+              id="senha"
+              placeholder="Senha"
+              autocomplete="current-password"
+              aria-label="Senha"
+              required
+            >
+
+            <button
+              type="button"
+              id="togglePassword"
+              class="eye-button"
+              aria-label="Mostrar senha"
+            >
+              <svg viewBox="0 0 24 24">
+                <path d="M3 3 21 21"/>
+                <path d="M10.6 10.6a2 2 0 0 0 2.8 2.8"/>
+                <path d="M9.9 5.3A10.5 10.5 0 0 1 12 5c5.5 0 9.5 7 9.5 7a17 17 0 0 1-4 4.7"/>
+                <path d="M6.2 6.2C3.9 8 2.5 12 2.5 12s4 7 9.5 7c1.3 0 2.5-.4 3.6-1"/>
+              </svg>
+            </button>
+
+          </div>
+
+          <!-- OPÇÕES -->
+          <div class="form-options">
+
+            <label class="remember">
+              <input type="checkbox" id="remember" checked>
+              <span>Manter conectado</span>
+            </label>
+
+            <button
+              type="button"
+              class="text-link"
+              id="forgot"
+            >
+              Esqueci minha senha
+            </button>
+
+          </div>
+
+          <p
+            class="form-error"
+            id="formError"
+            role="alert"
+          ></p>
+
+          <button class="primary-button" type="submit">
+            Entrar <span>→</span>
+          </button>
+
+        </form>
+
+        <div class="separator">
+          <span>Ou</span>
+        </div>
+
+        <!-- GOV.BR -->
+        <button
+          type="button"
+          class="gov-button"
+          id="govButton"
+        >
+          <img src="assets/sus-cross.svg" alt="">
+          Entrar com gov.br
+        </button>
+
+        <p class="learn-more">
+          Ainda não tem acesso?
+
+          <button
+            type="button"
+            class="text-link"
+            id="about"
+          >
+            Saiba mais sobre o TeleSus
+          </button>
+        </p>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- PÁGINA INICIAL PROVISÓRIA -->
+  <main id="telaInicial" class="dashboard" hidden>
+
+    <header class="dashboard-header">
+
+      <h2>TeleSus</h2>
+
+      <button id="sairButton" class="logout-button">
+        Sair
+      </button>
+
+    </header>
+
+    <section class="dashboard-content">
+
+      <h1>Bem-vindo ao TeleSus!</h1>
+
+      <p>
+        Seu acesso ao projeto foi realizado.
+      </p>
+
+      <div class="dashboard-card">
+        <h3>Suas informações</h3>
+
+        <p>
+          <strong>CPF:</strong>
+          <span id="cpfUsuario"></span>
+        </p>
+      </div>
+
+      <div class="dashboard-card">
+        <h3>Telemedicina</h3>
+
+        <p>
+          Em breve você poderá acessar agendamentos,
+          pré-triagem, consultas e hospitais próximos.
+        </p>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- MODAL DE MENSAGENS -->
+  <div class="modal-backdrop" id="modal" hidden>
+
+    <div
+      class="modal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="modalTitle"
+    >
+
+      <button
+        class="modal-close"
+        id="modalClose"
+        aria-label="Fechar"
+      >
+        ×
+      </button>
+
+      <div class="modal-icon">ℹ</div>
+
+      <h3 id="modalTitle"></h3>
+
+      <p id="modalText"></p>
+
+      <button
+        type="button"
+        class="primary-button"
+        id="modalOk"
+      >
+        Entendi
+      </button>
+
+    </div>
+
+  </div>
+
+</body>
+</html>

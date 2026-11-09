@@ -1,0 +1,266 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TeleSus | Início</title>
+
+  <link rel="stylesheet" href="TeleSusInicio.css">
+  <script src="TeleSusInicio.js" defer></script>
+  <link rel="stylesheet" href="TeleSusHospitais.css">
+  <script src="TeleSusGeoapifyConfig.js"></script>
+  <script src="TeleSusHospitais.js"></script>
+  
+</head>
+
+<body>
+  <div class="app">
+
+    <!-- MENU LATERAL -->
+    <aside class="sidebar" id="sidebar">
+
+      <div class="sidebar-brand">
+        <img src="assets/telesus-symbol.svg" alt="TeleSus">
+        <h1>Tele<span>Sus</span></h1>
+        <small>Mais cuidado, mais perto de você</small>
+      </div>
+
+      
+<nav class="main-nav" aria-label="Menu principal">
+
+  <button class="nav-item active" data-page="inicio">
+    <img src="assets/house.svg" class="nav-icon" alt="">
+    Início
+  </button>
+
+  <button class="nav-item" data-page="informacoes">
+    <img src="assets/user.svg" class="nav-icon" alt="">
+    Suas informações
+  </button>
+
+  <button class="nav-item" data-page="meus-agendamentos">
+    <img src="assets/calendar-days.svg" class="nav-icon" alt="">
+    Meus agendamentos
+  </button>
+
+  <button class="nav-item" data-page="agendamento">
+    <img src="assets/calendar.svg" class="nav-icon" alt="">
+    Agendamento
+  </button>
+
+  <button class="nav-item" data-page="emergencia">
+    <img src="assets/siren.svg" class="nav-icon" alt="">
+    Emergência
+  </button>
+
+  <button class="nav-item" data-page="hospitais">
+    <img src="assets/hospital.svg" class="nav-icon" alt="">
+    Hospitais perto
+  </button>
+
+</nav>
+
+      
+<div class="accessibility">
+
+  <p class="section-label">ACESSIBILIDADE</p>
+
+  <button id="contrastButton" class="access-item">
+    <img src="assets/sun-moon.svg" class="nav-icon" alt="">
+    Acessibilidade / Contraste
+  </button>
+
+  <button id="librasButton" class="access-item">
+    <img src="assets/hand-heart.svg" class="nav-icon" alt="">
+    VLibras
+  </button>
+
+  <button id="fontButton" class="access-item">
+    <img src="assets/a-large-small.svg" class="nav-icon" alt="">
+    Ajustes da Fonte
+  </button>
+
+</div>
+
+
+      <div class="sidebar-bottom">
+        <button id="logoutButton" class="logout">
+          <span class="nav-icon">⇥</span>
+          Sair da conta
+        </button>
+      </div>
+    </aside>
+
+    <!-- ÁREA PRINCIPAL -->
+    <div class="main-area">
+
+      <header class="topbar">
+        <button id="menuToggle" class="menu-toggle" aria-label="Abrir menu">
+          ☰
+        </button>
+
+        <div class="welcome">
+          <h2>Olá, <span id="nomeBoasVindas">Paciente</span>!</h2>
+          <p>Que bom te ver por aqui. Cuide da sua saúde!</p>
+        </div>
+
+        <div class="user-area">
+          <div class="user-profile">
+            <div class="avatar">●</div>
+            <span id="nomePerfil">Paciente</span>
+            <span>⌄</span>
+          </div>
+
+          <div class="user-details">
+            <span>UBS de Referência: <strong id="ubsUsuario">Não informada</strong></span>
+            <span>Cartão SUS: <strong id="cartaoSus">Não informado</strong></span>
+          </div>
+        </div>
+      </header>
+
+      <main class="content">
+
+        <!-- PÁGINA INICIAL -->
+        <section id="paginaInicio" class="page-section">
+
+          <!-- PRÓXIMA CONSULTA -->
+          <div class="consultation-banner">
+
+            <div class="consultation-info">
+              <h3>Sua próxima consulta</h3>
+
+              <h2 id="tempoConsulta">
+                Nenhuma consulta agendada
+              </h2>
+
+              <p>
+                <strong>Médico(a):</strong>
+                <span id="medicoConsulta">Não definido</span>
+              </p>
+
+              <p>
+                <strong>Especialidade:</strong>
+                <span id="especialidadeConsulta">Não definida</span>
+              </p>
+
+              <button id="entrarConsulta" class="primary-button">
+                ENTRAR NA SALA VIRTUAL
+              </button>
+            </div>
+
+            <div class="video-icon">
+              <svg viewBox="0 0 24 24">
+                <rect x="2" y="5" width="14" height="14" rx="3"/>
+                <path d="m16 10 6-4v12l-6-4"/>
+              </svg>
+            </div>
+          </div>
+
+          <!-- CARTÕES -->
+          <div class="cards-grid">
+
+            <button class="feature-card" data-page="informacoes">
+              <div class="circle-icon blue">
+                <svg viewBox="0 0 24 24">
+                  <circle cx="12" cy="7" r="4"/>
+                  <path d="M4 22v-3a8 8 0 0 1 16 0v3"/>
+                </svg>
+              </div>
+              <h3>Suas informações</h3>
+              <p>Veja e atualize seus dados pessoais e de contato.</p>
+              <span class="card-arrow">›</span>
+            </button>
+
+            <button class="feature-card" data-page="meus-agendamentos">
+              <div class="circle-icon blue">
+                <svg viewBox="0 0 24 24">
+                  <rect x="3" y="5" width="18" height="16" rx="2"/>
+                  <path d="M7 2v6M17 2v6M3 10h18M8 15h4"/>
+                </svg>
+              </div>
+              <h3>Meus agendamentos</h3>
+              <p>Consulte seus atendimentos e horários.</p>
+              <span class="card-arrow">›</span>
+            </button>
+
+            <button class="feature-card" data-page="agendamento">
+              <div class="circle-icon green">
+                <svg viewBox="0 0 24 24">
+                  <rect x="3" y="5" width="18" height="16" rx="2"/>
+                  <path d="M7 2v6M17 2v6M3 10h18"/>
+                  <path d="M12 16h6M15 13v6"/>
+                </svg>
+              </div>
+              <h3>Agendamento</h3>
+              <p>Solicite um novo atendimento com um profissional.</p>
+              <span class="card-arrow">›</span>
+            </button>
+
+            <button class="feature-card" data-page="emergencia">
+              <div class="emergency-top">
+                <div class="circle-icon red">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M12 3 2 21h20L12 3Z"/>
+                    <path d="M12 9v5M12 18h.01"/>
+                  </svg>
+                </div>
+                <strong>Em caso de gravidade, disque SAMU 192</strong>
+              </div>
+              <h3>Emergência</h3>
+              <p class="emergency-text">
+                Em caso de gravidade, disque SAMU 192 ou busque a UPA mais próxima.
+              </p>
+              <span class="card-arrow">›</span>
+            </button>
+
+            <button class="feature-card" data-page="hospitais">
+              <div class="circle-icon purple">
+                <svg viewBox="0 0 24 24">
+                  <path d="M12 22s8-7 8-13a8 8 0 1 0-16 0c0 6 8 13 8 13Z"/>
+                  <circle cx="12" cy="9" r="3"/>
+                </svg>
+              </div>
+              <h3>Hospitais perto</h3>
+              <p>Encontre as unidades de saúde mais próximas de você.</p>
+              <span class="card-arrow">›</span>
+            </button>
+
+            <div class="health-card">
+              <svg viewBox="0 0 100 100">
+                <path d="M50 85 16 52C-4 29 25 4 50 29 75 4 104 29 84 52Z"/>
+                <path d="M19 51h18l8-13 10 27 9-14h17"/>
+              </svg>
+              <p>Cuidar da sua saúde também é um ato de cidadania.</p>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- OUTRAS SEÇÕES -->
+        <section id="paginaSecundaria" class="page-section" hidden>
+          <button id="voltarInicio" class="back-button">
+            ← Voltar ao início
+          </button>
+
+          <h2 id="tituloPagina"></h2>
+          <p id="descricaoPagina"></p>
+
+          <div id="conteudoPagina" class="secondary-card"></div>
+        </section>
+
+      </main>
+    </div>
+  </div>
+
+  <!-- MODAL -->
+  <div id="modal" class="modal-overlay" hidden>
+    <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button id="modalClose" class="modal-close">×</button>
+      <h2 id="modalTitle"></h2>
+      <p id="modalMessage"></p>
+      <button id="modalOk" class="primary-button">Entendi</button>
+    </div>
+  </div>
+</body>
+</html>

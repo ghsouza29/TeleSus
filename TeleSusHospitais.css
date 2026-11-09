@@ -1,0 +1,16 @@
+/* Hospitais perto - TeleSus */
+.hospitais-painel {max-width:850px;margin:0 auto;padding:12px 0;}
+.hospitais-painel h2 {margin-bottom:10px;}
+.hospitais-aviso {background:#fff1f2;color:#881337;border-left:4px solid #be123c;padding:16px;border-radius:10px;margin:20px 0;line-height:1.6;}
+.hospitais-aviso a {color:inherit;font-weight:800;}
+.hospitais-localizar {border:0;background:#1269a5;color:#fff;padding:14px 20px;border-radius:10px;font:inherit;font-weight:700;cursor:pointer;}
+.hospitais-localizar:disabled {opacity:.6;cursor:wait;}
+.hospitais-status {margin:16px 0;color:#475569;line-height:1.6;}
+.hospitais-resultados {display:grid;gap:12px;}
+.hospitais-item {background:#fff;border:1px solid #dce5ed;border-radius:12px;padding:18px;box-shadow:0 3px 12px rgba(0,0,0,.04);}
+.hospitais-item h3 {font-size:1.05rem;margin:0 0 8px;}
+.hospitais-item p {color:#475569;margin:0 0 12px;}
+.hospitais-item a {font-weight:700;color:#1269a5;}
+body.high-contrast .hospitais-aviso,body.high-contrast .hospitais-item {background:#000;color:#fff;border:2px solid #fff;}
+body.high-contrast .hospitais-item p,body.high-contrast .hospitais-status,body.high-contrast .hospitais-item a,body.high-contrast .hospitais-aviso a {color:#fff;}
+body.high-contrast .hospitais-localizar {background:#ff0;color:#000;}
